@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="soccer@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="soccer">
+      <ObjectId>17026</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-06-10.22:49:11.933</IntrospectionTimestamp>
+      <IntrospectionStateNumber>727</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="fixture_id_seq">
+      <ObjectId>17043</ObjectId>
+      <StateNumber>727</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="10" parent="3" name="goal_scored_id_seq">
+      <ObjectId>17035</ObjectId>
+      <StateNumber>727</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="11" parent="3" name="leage_id_seq">
+      <ObjectId>17059</ObjectId>
+      <StateNumber>727</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="12" parent="3" name="players_id_seq">
+      <ObjectId>17027</ObjectId>
+      <StateNumber>727</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="13" parent="3" name="team_id_seq">
+      <ObjectId>17051</ObjectId>
+      <StateNumber>727</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="14" parent="3" name="fixture">
+      <ObjectId>17045</ObjectId>
+      <StateNumber>727</StateNumber>
+    </table>
+    <table id="15" parent="3" name="goal_scored">
+      <ObjectId>17037</ObjectId>
+      <StateNumber>727</StateNumber>
+    </table>
+    <table id="16" parent="3" name="leage">
+      <ObjectId>17061</ObjectId>
+      <StateNumber>727</StateNumber>
+    </table>
+    <table id="17" parent="3" name="player_match">
+      <ObjectId>17067</ObjectId>
+      <StateNumber>727</StateNumber>
+    </table>
+    <table id="18" parent="3" name="players">
+      <ObjectId>17029</ObjectId>
+      <StateNumber>727</StateNumber>
+    </table>
+    <table id="19" parent="3" name="team">
+      <ObjectId>17053</ObjectId>
+      <StateNumber>727</StateNumber>
+    </table>
+    <column id="20" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>727</StateNumber>
+      <DefaultExpression>nextval(&apos;fixture_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="21" parent="14" name="team1_score">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="22" parent="14" name="team2_score">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="23" parent="14" name="fixture_date">
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="24" parent="14" name="team1_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="25" parent="14" name="team2_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <index id="26" parent="14" name="fixture_pkey">
+      <ObjectId>17049</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="27" parent="14" name="fixture_pkey">
+      <ObjectId>17050</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>fixture_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="28" parent="14" name="fk_6">
+      <ObjectId>17097</ObjectId>
+      <ColNames>team1_id</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefKeyName>team_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="29" parent="14" name="fk_7">
+      <ObjectId>17102</ObjectId>
+      <ColNames>team2_id</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefKeyName>team_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="30" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>727</StateNumber>
+      <DefaultExpression>nextval(&apos;goal_scored_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="31" parent="15" name="goal_time">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="32" parent="15" name="player_id">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="33" parent="15" name="fixture_id">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <index id="34" parent="15" name="goal_scored_pkey">
+      <ObjectId>17041</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="35" parent="15" name="goal_scored_pkey">
+      <ObjectId>17042</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>goal_scored_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="36" parent="15" name="fk_2">
+      <ObjectId>17077</ObjectId>
+      <ColNames>player_id</ColNames>
+      <RefTableName>players</RefTableName>
+      <RefKeyName>players_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="37" parent="15" name="fk_3">
+      <ObjectId>17082</ObjectId>
+      <ColNames>fixture_id</ColNames>
+      <RefTableName>fixture</RefTableName>
+      <RefKeyName>fixture_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="38" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>727</StateNumber>
+      <DefaultExpression>nextval(&apos;leage_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="39" parent="16" name="leage_name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="40" parent="16" name="logo">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="41" parent="16" name="prize">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <index id="42" parent="16" name="leage_pkey">
+      <ObjectId>17065</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="43" parent="16" name="leage_pkey">
+      <ObjectId>17066</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>leage_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="44" parent="17" name="goal_concede">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="45" parent="17" name="min_player">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="46" parent="17" name="yellow_card">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="47" parent="17" name="red_card">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="48" parent="17" name="fixture_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="49" parent="17" name="player_id">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>727</StateNumber>
+    </column>
+    <index id="50" parent="17" name="player_match_pkey">
+      <ObjectId>17070</ObjectId>
+      <ColNames>fixture_id
+player_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="51" parent="17" name="player_match_pkey">
+      <ObjectId>17071</ObjectId>
+      <ColNames>fixture_id
+player_id</ColNames>
+      <UnderlyingIndexName>player_match_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="17" name="fk_4">
+      <ObjectId>17087</ObjectId>
+      <ColNames>fixture_id</ColNames>
+      <RefTableName>fixture</RefTableName>
+      <RefKeyName>fixture_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="53" parent="17" name="fk_5">
+      <ObjectId>17092</ObjectId>
+      <ColNames>player_id</ColNames>
+      <RefTableName>players</RefTableName>
+      <RefKeyName>players_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="54" parent="18" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>727</StateNumber>
+      <DefaultExpression>nextval(&apos;players_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="55" parent="18" name="team_name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="56" parent="18" name="name">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="57" parent="18" name="position">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="58" parent="18" name="goal">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="59" parent="18" name="photo">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="60" parent="18" name="age">
+      <Position>7</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="61" parent="18" name="team_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <index id="62" parent="18" name="players_pkey">
+      <ObjectId>17033</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="63" parent="18" name="players_pkey">
+      <ObjectId>17034</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>players_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="64" parent="18" name="fk_1">
+      <ObjectId>17072</ObjectId>
+      <ColNames>team_id</ColNames>
+      <RefTableName>team</RefTableName>
+      <RefKeyName>team_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="65" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>727</StateNumber>
+      <DefaultExpression>nextval(&apos;team_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="66" parent="19" name="team_name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="67" parent="19" name="number_of_win">
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="68" parent="19" name="number_of_lost">
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="69" parent="19" name="number_of_draw">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="70" parent="19" name="score">
+      <Position>6</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="71" parent="19" name="logo">
+      <Position>7</Position>
+      <DataType>varchar(45)|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <column id="72" parent="19" name="leage_id">
+      <Position>8</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>727</StateNumber>
+    </column>
+    <index id="73" parent="19" name="team_pkey">
+      <ObjectId>17057</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="74" parent="19" name="team_pkey">
+      <ObjectId>17058</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>team_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="75" parent="19" name="fk_8">
+      <ObjectId>17107</ObjectId>
+      <ColNames>leage_id</ColNames>
+      <RefTableName>leage</RefTableName>
+      <RefKeyName>leage_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
